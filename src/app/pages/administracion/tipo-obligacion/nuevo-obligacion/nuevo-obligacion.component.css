@@ -1,0 +1,11 @@
+.titleTO{
+    background-color: #0074BC;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+    text-align: center;
+    padding: 1rem;
+}
+.input-error{
+    box-shadow: 0 0 5px 1px #ff2600 !important;
+  }

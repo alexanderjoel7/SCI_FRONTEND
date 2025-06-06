@@ -1,0 +1,24 @@
+<p-toast></p-toast>
+<div class="container-fluid animate__animated animate__fadeIn px-4">
+    <p class="text-center text-3xl font-extrabold mt-4">Usuarios</p>
+    <div class="container">
+        <div class="p-0">
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="animate__animated animate__fadeInLeft  text-lg font-semibold colorAzulInst m-0">Credenciales</p>
+              <!--
+              <p-button [raised]="true" styleClass="btn-bdp animate__animated animate__fadeInRight " (click)="addObligacion()"> 
+                <ng-template pTemplate="content">
+                  <i class="bi bi-plus-lg mr-2 p-0"></i> Nuevo
+                </ng-template>
+              </p-button> -->
+            </div>
+        </div>
+        <hr class="my-2 bordeAncho"/>
+    </div>
+    <div class="container col-md-12 col-lg-10 my-2 animate__animated animate__fadeInUp">
+        <!--
+        <app-tabla [columns]="columns" [data]="ListaUsuarios" [rows]="10" [globalFilterFields]="filter" (editarRow)="abrirEditarObligacion($event)" (eliminarRow)="eliminarObligacion($event)"></app-tabla>
+        -->
+        <app-tabla [columns]="columns" [data]="ListaUsuarios" [rows]="10" [globalFilterFields]="filter"></app-tabla>
+    </div>
+</div>

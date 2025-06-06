@@ -1,0 +1,49 @@
+
+
+  /* Para Webkit (Chrome, Safari) */
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Para Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  /* Clase personalizada para agregar a los inputs */
+  .no-spin {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+  }
+  .colorAzulInst{
+    color: #004a8f;
+  }
+  .buttonAdd{
+    background-color: red;
+  }
+  .bordeAncho{
+    width: 100%;
+  }
+  ::ng-deep .btn-bdp {
+    color: white !important;
+    margin: 0;
+    background-color: rgb(0, 116, 188) !important;
+    border: none !important;
+    height: 35px;
+  }
+  
+  ::ng-deep .btn-bdp:hover {
+    background-color: rgb(0, 74, 143) !important;
+  }
+  ::ng-deep .btn-bdp-cancel {
+    color: white !important;
+    background-color: rgb(233, 42, 42) !important;
+    border: none !important;
+    height: 35px;
+  }
+  
+  ::ng-deep .btn-bdp-cancel:hover {
+    background-color: rgb(188, 0, 0) !important;
+  }

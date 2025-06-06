@@ -1,0 +1,52 @@
+
+button {
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+}
+button.mat-raised-button.green-button {
+  background-color: #004a8f;
+  color: white;
+}
+.editarBoton{
+  color: #0074BC;
+}
+.editarBoton:hover{
+  background-color: #0074BC;
+  color: white;
+}
+.eliminarBoton{
+  color: #ff0000;
+}
+.eliminarBoton:hover{
+  background-color: #ff0000;
+  color: white;
+}
+.tablaTitle{
+  color: #0074BC;
+  background: #e1f3ff;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+.tablaData{
+  font-size: 14px;
+  font-weight: 500;
+}
+:host ::ng-deep .p-inputtext:focus {
+  border-color: #004a8f !important; 
+  box-shadow: 0 0 0 0.2rem rgba(0, 116, 188, 0.25); 
+}
+.fondo {
+  background-color: transparent;
+}
+:host ::ng-deep .p-datatable .p-datatable-header {
+  background-color: transparent !important;
+  border: none !important;
+}
+.texto-con-saltos {
+  white-space: pre-line;
+}

@@ -1,0 +1,31 @@
+<p-toast></p-toast>
+<h2 class="titleTO">Nuevo tipo de obligación</h2>
+<mat-dialog-content class="mat-typography m-0">
+    <form [formGroup]="datosNuevoObligacion">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 py-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-1" for="documento">Documento/Actividad:</label>
+                    <input formControlName="documento" [ngClass]="{'input-error': (datosNuevoObligacion.get('documento')?.invalid && datosNuevoObligacion.get('documento')?.touched)||(clicEnviar && datosNuevoObligacion.get('documento')?.invalid)}"  class="h-10 bg-white shadow border border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline disabled:bg-gray-200 disabled:text-gray-500"  
+                    type="text" id="documento" maxlength="200" placeholder="Escribe el documento..." (input)="validateInputTN($event,'documento')">
+                </div>                
+                <div class="col-md-12 py-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-1" for="descripcion">Descripción:</label>
+                    <textarea [ngClass]="{'input-error': (datosNuevoObligacion.get('descripcion')?.invalid && datosNuevoObligacion.get('descripcion')?.touched)||(clicEnviar && datosNuevoObligacion.get('descripcion')?.invalid)}" class="bg-white bg-white shadow border border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline disabled:bg-gray-200 disabled:text-gray-500" placeholder="Escribe la descripción..." type="text" maxlength="500" id="descripcion" rows="4" formControlName="descripcion" (input)="validateInputTNL($event,'descripcion')"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="">
+    <p-button [raised]="true" styleClass="btn-bdp-cancel mx-1" (click)="cerrarDialog()">
+        <ng-template pTemplate="content">
+            <i class="bi bi-x mr-2 p-0"></i>Cancelar 
+        </ng-template>
+    </p-button>
+    <p-button [raised]="true" styleClass="btn-bdp" (click)="nuevo()">
+        <ng-template pTemplate="content">
+          <i class="bi bi-floppy mr-2 p-0"></i> Guardar
+        </ng-template>
+    </p-button>
+</mat-dialog-actions>

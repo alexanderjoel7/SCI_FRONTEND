@@ -1,0 +1,13 @@
+<div [@fadeIn]="'in'" class="ngx-spinner-overlay" *ngIf="spinner.getSpinner() | async">
+  <app-loader></app-loader>
+</div>
+<ng-container *ngIf="sharedService.mostrarLogin; else contenidoApp">
+  <div [@routeAnimations]="o.isActivated ? o.activatedRoute : ''" class="content">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+</ng-container>
+
+<ng-template #contenidoApp>
+  <app-nav-menu></app-nav-menu>
+  <router-outlet></router-outlet>
+</ng-template>

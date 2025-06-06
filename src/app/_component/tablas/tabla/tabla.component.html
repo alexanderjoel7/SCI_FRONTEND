@@ -1,0 +1,61 @@
+<div class="container">
+    <p-table
+    #dt
+    [value]="data"
+    showGridlines
+    [tableStyle]="{ 'min-width': '50rem', 'width': '100%' }"
+    [globalFilterFields]="globalFilterFields"
+    dataKey="id"
+    [rows]="rows"
+    columnResizeMode="expand"
+    stripedRows 
+    [paginator]="true"
+    currentPageReportTemplate="{first} al {last} de {totalRecords} registros"
+    [rowsPerPageOptions]="[5, 10, 50]"
+    [showCurrentPageReport]="true"
+    >
+  <ng-template #caption>
+    <div class="d-flex justify-content-end fondo">
+      <p-iconfield iconPosition="left">
+        <p-inputicon>
+          <i class="bi bi-search"></i>
+        </p-inputicon>
+        <input
+          pInputText
+          type="text"
+          (input)="filtrarGlobal($event)"
+          placeholder="Buscar..."
+          class="py-1"
+        />
+      </p-iconfield>
+    </div>
+  </ng-template>
+    <ng-template pTemplate="header" #header>
+      <tr>
+        <th *ngFor="let col of columns" [hidden]="col.header === 'Id'" class="tablaTitle">
+          {{ col.header }}
+        </th>
+        <th class="tablaTitle">Acciones</th>
+      </tr>
+    </ng-template>
+  
+    <ng-template pTemplate="body" let-row #body>
+      <tr>
+        <td *ngFor="let col of columns" [hidden]="col.header === 'Id'" class="tablaData py-2">
+          <span class="texto-con-saltos">{{ row[col.field] }}</span>
+        </td>
+        <td class="text-center py-2">
+          <button matTooltip="Editar" type="button" class="btn btn-outline-primary py-0 px-1 editarBoton" (click)="editar(row)"><i class="bi bi-pencil-square"></i></button>
+          <button matTooltip="Eliminar" type="button" class="btn btn-outline-danger py-0 px-1 eliminarBoton" (click)="eliminar(row)"><i class="bi bi-trash-fill"></i></button>
+        </td>
+      </tr>
+    </ng-template>
+    
+  
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td [attr.colspan]="columns.length">No se encontraron datos.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
